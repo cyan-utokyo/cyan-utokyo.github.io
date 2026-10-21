@@ -43,7 +43,11 @@ window.PROFILE = {
     { date: "July 2018", title: "IACM-FRC Fellowship", detail: "International Association for Computational Mechanics, WCCM XIII, New York." }
   ],
   email: "chenyan@iis.u-tokyo.ac.jp",
-  links: [], // 例如 { label: "Google Scholar", url: "https://scholar.google.com/citations?user=你的ID" }
+  links: [
+    { label: "Google Scholar", url: "https://scholar.google.com/citations?user=rpGyDFoAAAAJ" },
+    { label: "GitHub", url: "https://github.com/cyan-utokyo" },
+    { label: "ORCID", url: "https://orcid.org/0000-0001-9901-5162" }
+  ],
   cv: "", // 例如 assets/cv.pdf；文件加入后再填，按钮会自动出现。
-  updated: "2026-10-19"
+  updated: "2026-10-21"
 };

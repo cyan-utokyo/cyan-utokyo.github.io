@@ -62,7 +62,18 @@
   if (p.email) {
     byId("contact-links").append(node("span", "sidebar-email", p.email.replace(/@/g, " [at] ")));
   }
-  p.links.forEach(item => { const a = link(item.label + " ↗", item.url, "text-link"); if (a) byId("contact-links").append(a); });
+  const profileLinks = node("div", "profile-links");
+  p.links.forEach(item => {
+    const a = link(item.label, item.url);
+    if (!a) return;
+    if (profileLinks.childElementCount) {
+      const separator = node("span", "", "·");
+      separator.setAttribute("aria-hidden", "true");
+      profileLinks.append(separator);
+    }
+    profileLinks.append(a);
+  });
+  if (profileLinks.childElementCount) byId("contact-links").append(profileLinks);
   write("copyright", `© ${p.name}`); write("updated", p.updated); byId("updated").dateTime = p.updated;
   if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver(entries => {
